@@ -1,3 +1,5 @@
+"use client";
+
 import { getProducts, getProductsByCategory } from "@/lib/api/product/queries";
 import { CategoryId } from "@/types";
 import { useQuery } from "@tanstack/react-query";
