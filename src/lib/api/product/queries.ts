@@ -12,7 +12,7 @@ export async function getProducts() {
 export async function getProductsByCategory(id: CategoryId) {
   let { data: products, error } = await supabaseClient
     .from("products")
-    .select("*")
+    .select("*, categories (*), product_images (*)")
     .eq("category_id", id);
 
   return { products, error };

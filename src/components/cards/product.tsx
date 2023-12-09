@@ -2,21 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Heart, ShoppingCart } from "lucide-react";
-import { IProduct } from "@/types";
 
-export default function Product({
-  id,
-  title,
-  images,
-  price,
-}: IProduct & { images: string[] }) {
+interface ProductProps {
+  id: number;
+  title: string;
+  thumbnail: string;
+  price: number;
+}
+
+export default function Product({ id, title, thumbnail, price }: ProductProps) {
+  console.log(thumbnail || "https://i.imgur.com/R2PN9Wq.jpeg");
   return (
     <li>
       <div className="block group">
         <div className="relative">
           <div className="relative block h-[350px] sm:h-[450px] w-full overflow-hidden">
             <Image
-              // src={images[0]}
+              src={thumbnail || "https://i.imgur.com/R2PN9Wq.jpeg"}
               alt={title}
               className="object-cover transition duration-500 group-hover:scale-105"
               fill

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCategoryQuery } from "@/hooks/category/query";
+import { useCategoryQuery } from "@/hooks/category/queries";
 import Banner from "../_components/banner";
 import FilterableProducts from "./_components/filterable-products";
 

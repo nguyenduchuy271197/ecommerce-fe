@@ -6,7 +6,7 @@ import Link from "next/link";
 import MobileNav from "./mobile-nav";
 import { getCategories } from "@/lib/api/category/queries";
 import { supabaseClient } from "@/lib/supabaseClient";
-import { useCategoriesQuery } from "@/hooks/category/query";
+import { useCategoriesQuery } from "@/hooks/category/queries";
 
 export default function Navbar() {
   const { data } = useCategoriesQuery();

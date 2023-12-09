@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "../../components/section-heading";
-import { useCategoriesQuery } from "@/hooks/category/query";
+import { useCategoriesQuery } from "@/hooks/category/queries";
 import { ICategory } from "@/types";
 
 function CategoryCard({ id, name, image }: ICategory) {
@@ -30,30 +30,6 @@ function CategoryCard({ id, name, image }: ICategory) {
 }
 
 export default function CategoriesGrid() {
-  const categories = [
-    {
-      id: "1",
-      slug: "shirts",
-      thumbnail:
-        "https://images.unsplash.com/photo-1618898909019-010e4e234c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      name: "Shirts",
-    },
-    {
-      id: "2",
-      slug: "pants",
-      thumbnail:
-        "https://images.unsplash.com/photo-1618898909019-010e4e234c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      name: "Pants",
-    },
-    {
-      id: "3",
-      slug: "glasses",
-      thumbnail:
-        "https://images.unsplash.com/photo-1618898909019-010e4e234c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      name: "Glasses",
-    },
-  ];
-
   const { data, isLoading } = useCategoriesQuery();
   return (
     <section>
